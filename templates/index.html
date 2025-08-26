@@ -13,15 +13,14 @@
       <input type="text" name="url" placeholder="Entrez l'URL de la vidéo" required>
       <input type="submit" value="Télécharger"> 
     </form>
-              {% if video_file %}
-      <div class="video-list">
-          <h2>Vidéos créées :</h2>
-          <a href="{{ url_for('serve_video', filename=video_file) }}" target="_blank">
-              {{ video_file }}
-          </a>
-      </div>
-      {% endif %}
-
+      {% if video_file %}
+    <div class="video-list">
+        <h2>Vidéos créées :</h2>
+        <a href="{{ url_for('serve_video', filename=video_file) }}" target="_blank">
+            {{ video_file }}
+        </a>
+    </div>
+  {% endif %}
 
 	
 </body>
