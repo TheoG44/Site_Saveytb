@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8" /> <!--Régler l'encodage -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!--.... -->
+	  <title> Convertisseur Youtube</title> <!--titre de la page -->
+		<link rel="stylesheet" href="style1.css" /> <!--lien vers fichier CSS -->
+	</head>
+	
+	<body> <!--contenu de la Page -->
+		
+    <form method="POST">
+      <input type="text" name="url" placeholder="Entrez l'URL de la vidéo" required>
+      <input type="submit" value="Télécharger"> 
+    </form>
+              {% if video_file %}
+      <div class="video-list">
+          <h2>Vidéos créées :</h2>
+          <a href="{{ url_for('serve_video', filename=video_file) }}" target="_blank">
+              {{ video_file }}
+          </a>
+      </div>
+      {% endif %}
+
+
+	
+</body>
+	
+</html>

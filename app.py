@@ -1,18 +1,33 @@
-from flask import Flask, render_template, request, redirect, url_for
-import os
+from flask import Flask, render_template, request, send_from_directory
 from main import main
+import os
+
+#=====================================#
+#                                     #
+#         FRAMEWORKS : Flask          #
+#                                     #
+#=====================================#
 
 app = Flask(__name__)
 
+VIDEO_FOLDER = "VideoFinis"  # dossier vidéos sont enregistrées
+os.makedirs(VIDEO_FOLDER, exist_ok=True)
+
 @app.route("/", methods=["GET", "POST"])
 def index():
+    video_file = None
     if request.method == "POST":
         url = request.form.get("url")
         if url:
-            # Appelle ton script avec l'URL
-            videos = main(url)  # renvoie la liste des fichiers créés
-            return render_template("index.html", videos=videos)
-    return render_template("index.html", videos=None)
+            video_file = main(url)  
+    return render_template("index.html", video_file=video_file)
 
-if __name__ == "__main__":
-    app.run(debug=True)
+# Route pour servir les vidéos
+@app.route("/videos/<filename>")
+def serve_video(filename):
+    return send_from_directory(VIDEO_FOLDER, filename)
+
+
+
+
+
