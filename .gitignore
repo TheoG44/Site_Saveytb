@@ -5,6 +5,7 @@
 pycache/
 *.pyc
 *.log
+*.mp4
 
 # Configs d’éditeurs
 .vscode/
