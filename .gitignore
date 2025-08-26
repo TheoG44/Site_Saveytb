@@ -1,0 +1,10 @@
+# Envrionnement Virtuel
+.env_saveytb/
+
+# Fichiers secrets
+pycache/
+*.pyc
+*.log
+
+# Configs d’éditeurs
+.vscode/
