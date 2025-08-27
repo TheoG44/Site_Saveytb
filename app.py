@@ -8,7 +8,7 @@ VIDEO_FOLDER = "VideoFinis"
 os.makedirs(VIDEO_FOLDER, exist_ok=True)
 
 last_video = None
-video_displayed = False  # 👈 nouvelle variable
+video_displayed = False  
 
 @app.route("/", methods=["GET", "POST"])
 def index():

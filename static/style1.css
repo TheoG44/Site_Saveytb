@@ -1,0 +1,182 @@
+/* === RESET DE BASE === */
+/* Supprime les marges/paddings par défaut et unifie la gestion des tailles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* === STYLE GLOBAL === */
+/* Définit l'apparence générale de la page (fond, police, structure flex) */
+body {
+  background-color: #F2F3F7; 
+  font-family: 'League Spartan', ui-sans-serif, system-ui, sans-serif, 
+              'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 
+              'Noto Color Emoji';
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  color: #2D3436; /* couleur par défaut du texte */
+}
+
+/* === HEADER === */
+/* Barre du haut avec le titre + navigation */
+header {
+  background-color: white;
+  border-bottom: 1px solid #333;
+  padding: 15px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header h1 {
+  color: #6C5CE7;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+/* Navigation horizontale du header */
+header nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+header nav a { 
+  color: #2D3436;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s; /* animation de survol */
+}
+
+header nav a:hover {
+  color: #6C5CE7; 
+}
+
+/* === BARRE URL === */
+/* Zone principale avec le champ de saisie + bouton Download */
+.barre-url {
+  margin: 40px auto;
+  text-align: center;
+}
+
+.barre-url form {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* espace entre champ texte et bouton */
+}
+
+/* Champ texte d’URL */
+.barre-url input[type="text"] {
+  width: 800px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 14px;
+  font-size: 14px;
+}
+
+/* Bouton Download */
+.barre-url input[type="submit"] {
+  background-color: #6C5CE7;
+  border: none;
+  padding: 12px 20px;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.barre-url input[type="submit"]:hover {
+  background-color: #A296FC;
+}
+
+/* === LISTE VIDÉOS === */
+/* Bloc qui affiche la/les vidéos téléchargées */
+.video-list {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 15px;
+  background: white;
+  border: 1px solid #333;
+  border-radius: 8px;
+}
+
+.video-list h2 {
+  font-size: 18px;
+  color: #2D3436;
+  margin-bottom: 10px;
+}
+
+.video-list a {
+  color: #2D3436;
+  text-decoration: none;
+  font-size: 14px;  
+}
+
+.video-list a:hover {
+  text-decoration: underline;
+}
+
+/* === MAIN === */
+/* Contenu principal : tutoriel + FAQ */
+main {
+  flex: 1;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+
+main section {
+  margin-bottom: 40px;
+}
+
+main h2 {
+  font-size: 20px;
+  color: #525cb1;
+  margin-bottom: 10px;
+}
+
+main h3 {
+  font-size: 16px;
+  color: #ce9178;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+main p {
+  font-size: 14px;
+  color: #526c83;
+}
+
+/* === FOOTER === */
+/* Bandeau en bas avec liens + copyright */
+footer {
+  background-color: white;
+  border-top: 1px solid #333;
+  padding: 20px 40px;
+  text-align: center;
+  font-size: 12px;
+  color: #2D3436;
+}
+
+/* Navigation du footer */
+footer nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  list-style: none;
+  margin-bottom: 10px;
+}
+
+footer nav a {
+  color: #2D3436;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+footer nav a:hover {
+  color: #41b389;
+}

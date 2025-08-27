@@ -1,45 +1,75 @@
 <!doctype html>
-<html>
-	<head>
-		<meta charset="utf-8" /> <!--Régler l'encodage -->
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!--.... -->
-	  <title> Convertisseur Youtube</title> <!--titre de la page -->
-		<link rel="stylesheet" href="style1.css" /> <!--lien vers fichier CSS -->
-	</head>
-	
-	<body> <!--contenu de la Page -->
-		<header>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" /> <!-- Encodage -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Responsive -->
+    <title>Convertisseur YouTube</title> <!-- Titre de la page -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700&display=swap" rel="stylesheet">
+
+
+  </head>
+
+  <body>
+    <!-- === HEADER === -->
+    <header>
+      <h1>SaveYtb.cc</h1>
       <nav>
         <ul>
-          <li><a href="index.html"</li>
-          <li><a href="page1.html"</li>
-          <li><a href="page2.html"</li>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="page1.html">FAQ</a></li>
+          <li><a href="page2.html">Contact</a></li>
         </ul>
       </nav>
-      <div class="barre-horizontale-header" style="--left-pos: 1400px"></div> <!-- Barre horizontale -->
-      
+      <div class="barre-horizontale-header" style="--left-pos: 1400px"></div>
     </header>
-    <form method="POST">
-      <input type="text" name="url" placeholder="Entrez l'URL de la vidéo" required>
-      <input type="submit" value="Télécharger"> 
-    </form>
-      {% if video_file %}
-    <div class="video-list">
-        <h2>Vidéos créées :</h2>
-        <a href="{{ url_for('serve_video', filename=video_file) }}" target="_blank">
-            {{ video_file }}
-        </a>
-    </div>
-      {% endif %}
-    <main class="BLock01">
-      <p></p>
-      <p></p>
-      <p></p>
-      <p></p>
+
+    <!-- === FORMULAIRE DE CONVERSION === -->
+    <section class="barre-url">
+      <form method="POST">
+        <input type="text" name="url" placeholder="Paste Your Url..." required>
+        <input type="submit" value="Download">
+      </form>
+    </section>
+
+    <!-- === LISTE VIDÉOS GÉNÉRÉES === -->
+    {% if video_file %}
+    <section class="video-list">
+      <h2>Vidéos créées :</h2>
+      <a href="{{ url_for('serve_video', filename=video_file) }}" target="_blank">
+        {{ video_file }}
+      </a>
+    </section>
+    {% endif %}
+
+    <!-- === CONTENU PRINCIPAL === -->
+    <main class="Block01">
+      <section class="Bl01">
+        <h2>Comment utiliser le convertisseur ?</h2>
+        <p>1. Copiez l’URL d’une vidéo YouTube.</p>
+        <p>2. Collez-la dans le champ ci-dessus.</p>
+        <p>3. Cliquez sur <em>Télécharger</em> pour récupérer le fichier.</p>
+      </section>
+
+      <section class="faq">
+        <h2>Questions fréquentes</h2>
+        <h3>Est-ce gratuit ?</h3>
+        <p>Oui, 100% gratuit.</p>
+
+      </section>
     </main>
+
+    <!-- === FOOTER === -->
     <footer>
       <div class="barre-verticale-footer" style="--left-pos: 150px"></div>
+      <nav>
+        <ul>
+          <li><a href="#">Confidentialité</a></li>
+          <li><a href="#">Conditions</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      <p>&copy; 2025 Convertisseur YouTube – Tous droits réservés</p>
     </footer>
   </body>
-	
 </html>
